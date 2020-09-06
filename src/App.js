@@ -4,6 +4,7 @@ import './animations.css';
 
 import Formulaire from './components/Formulaire';
 import Message from './components/Message';
+import Deconnexion from './components/Deconnexion';
 
 // Firebase
 import base from './base';
@@ -35,7 +36,7 @@ class App extends Component {
 		const messages = { ...this.state.messages };
 		messages[`message-${Date.now()}`] = message;
 		Object.keys(messages)
-			.slice(0, -15)
+			.slice(0, -10)
 			.forEach(key => {
 				messages[key] = null;
 			});
@@ -57,6 +58,7 @@ class App extends Component {
 
 		return (
 			<div className='box'>
+				<Deconnexion />
 				<div>
 					<div className='messages' ref={this.messagesRef}>
 						<TransitionGroup className='message'>{messages}</TransitionGroup>

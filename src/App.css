@@ -4,7 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body, .box > *, textarea, input {
+body,
+.box > *,
+textarea,
+input {
 	font-family: 'Roboto', sans-serif;
 	color: #1d1d1d;
 	overflow: hidden;
@@ -14,7 +17,7 @@ body, .box > *, textarea, input {
 	STRUCTURE
 ---------------------------- */
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
@@ -40,25 +43,33 @@ body {
 	box-sizing: border-box;
 	font-size: 24px;
 	padding: 5px;
-	border: 5px solid #2196F3;
+	border: 5px solid #2196f3;
 	border-width: 0 0 5px 0;
 	outline: none;
 }
 .box {
 	margin: auto;
-	display:flex;
+	display: flex;
 	justify-content: center;
- 	flex-wrap: wrap;
- 	align-items: flex-end;
+	flex-wrap: wrap;
+	align-items: flex-end;
 	width: 100%;
 	max-width: 500px;
 	height: calc(100vh - 100px);
-	padding: 50px 0;
+	padding: 10px 0;
 	/*border: 5px solid purple;*/
 }
-
 .box > * {
 	width: 100%;
+}
+
+/* ----------------------------
+	QUIT
+---------------------------- */
+.quit {
+	margin: 10px;
+	padding: 10px 20px;
+	background-color: #000;
 }
 
 /* ----------------------------
@@ -72,15 +83,15 @@ body {
 	align-self: flex-end;
 	max-height: calc(100vh - 310px);
 	overflow-y: scroll;
-	-webkit-overflow-scrolling:touch;
+	-webkit-overflow-scrolling: touch;
 }
 
 .messages::-webkit-scrollbar {
-    width: 0.4em;
+	width: 0.4em;
 }
- 
+
 .messages::-webkit-scrollbar-thumb {
-  background-color: #eceff1;
+	background-color: #eceff1;
 }
 
 /* ----------------------------
@@ -120,7 +131,7 @@ body {
 }
 
 .user-message {
-	background-color: #2196F3;
+	background-color: #2196f3;
 	color: #fff;
 	align-self: flex-end;
 	position: relative;
@@ -134,7 +145,7 @@ body {
 	width: 0;
 	border-width: 7px 0 0 10px;
 	border-style: solid;
-	border-color: #2196F3 transparent;
+	border-color: #2196f3 transparent;
 }
 
 /* ----------------------------
@@ -152,9 +163,9 @@ body {
 textarea {
 	box-sizing: border-box;
 	height: 120px;
-	border: 5px solid #2196F3;
+	border: 5px solid #2196f3;
 	border-width: 0 0 5px 0;
-	background-color: #ECEFF1;
+	background-color: #eceff1;
 	outline: none;
 	font-size: 20px;
 	padding: 5px 10px;
@@ -169,7 +180,7 @@ button {
 	font-size: 20px;
 	border: none;
 	color: white;
-	background-color: #2196F3;
+	background-color: #2196f3;
 	margin-top: 10px;
 	padding: 10px;
 	cursor: pointer;
@@ -178,7 +189,7 @@ button {
 
 button:disabled {
 	background-color: #eceff1;
-	cursor:not-allowed;
+	cursor: not-allowed;
 	color: white;
 }
 
@@ -194,4 +205,3 @@ button:disabled {
 	margin: 0;
 	background: #eceff1;
 }
-
