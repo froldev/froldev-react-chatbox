@@ -4,6 +4,9 @@ import './App.css';
 import Formulaire from './components/Formulaire';
 import Message from './components/Message';
 
+// Firebase
+import base from './base';
+
 class App extends Component {
 	state = {
 		messages: {},
@@ -11,6 +14,13 @@ class App extends Component {
 	};
 
 	messagesRef = createRef();
+
+	componentDidMount() {
+		base.syncState('/', {
+			context: this,
+			state: 'messages',
+		});
+	}
 
 	addMessage = message => {
 		const messages = { ...this.state.messages };
