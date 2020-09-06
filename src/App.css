@@ -56,7 +56,7 @@ body {
 	width: 100%;
 	max-width: 500px;
 	height: calc(100vh - 100px);
-	padding: 10px 0;
+	padding-bottom: 10px;
 	/*border: 5px solid purple;*/
 }
 .box > * {
