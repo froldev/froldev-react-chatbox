@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Message = ({ pseudo, message, isUser }) => {
-	return <p className='user-message'>Mon message</p>;
+const Message = ({ message }) => {
+	return <p className='user-message'>{message}</p>;
 };
 
 export default Message;

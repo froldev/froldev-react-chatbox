@@ -24,13 +24,20 @@ class App extends Component {
 	};
 
 	render() {
+		const messages = Object.keys(this.state.messages).map(key => (
+			<Message
+				key={key}
+				isUser={this.isUser}
+				pseudo={this.state.messages[key].pseudo}
+				message={this.state.messages[key].message}
+			/>
+		));
+
 		return (
 			<div className='box'>
 				<div>
-					<div className='messages'>
-						<Message />
-						<Message />
-						<Message />
+					<div className='messages' ref={this.messagesRef}>
+						<div className='message'>{messages}</div>
 					</div>
 				</div>
 				<Formulaire
