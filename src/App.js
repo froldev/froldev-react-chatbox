@@ -1,11 +1,15 @@
 import React, { Component, createRef } from 'react';
 import './App.css';
+import './animations.css';
 
 import Formulaire from './components/Formulaire';
 import Message from './components/Message';
 
 // Firebase
 import base from './base';
+
+// Animations
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 class App extends Component {
 	state = {
@@ -22,6 +26,11 @@ class App extends Component {
 		});
 	}
 
+	componentDidUpdate() {
+		const ref = this.messagesRef.current;
+		ref.scrollTop = ref.scrollHeight;
+	}
+
 	addMessage = message => {
 		const messages = { ...this.state.messages };
 		messages[`message-${Date.now()}`] = message;
@@ -33,21 +42,24 @@ class App extends Component {
 		this.setState({ messages });
 	};
 
+	isUser = pseudo => pseudo === this.state.pseudo;
+
 	render() {
 		const messages = Object.keys(this.state.messages).map(key => (
-			<Message
-				key={key}
-				isUser={this.isUser}
-				pseudo={this.state.messages[key].pseudo}
-				message={this.state.messages[key].message}
-			/>
+			<CSSTransition timeout={1000} classNames='fade' key={key}>
+				<Message
+					isUser={this.isUser}
+					pseudo={this.state.messages[key].pseudo}
+					message={this.state.messages[key].message}
+				/>
+			</CSSTransition>
 		));
 
 		return (
 			<div className='box'>
 				<div>
 					<div className='messages' ref={this.messagesRef}>
-						<div className='message'>{messages}</div>
+						<TransitionGroup className='message'>{messages}</TransitionGroup>
 					</div>
 				</div>
 				<Formulaire
