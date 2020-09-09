@@ -6,6 +6,7 @@
 		"firebase": "^5.5.1",
 		"prop-types": "^15.6.2",
 		"grpc": "^1.24.2",
+		"node-pre-gyp": "0.6.x",
 		"re-base": "^4.0.0",
 		"react": "^16.5.2",
 		"react-dom": "^16.5.2",
@@ -23,9 +24,7 @@
 		"extends": "react-app"
 	},
 	"engines": {
-		"node": ">=10.22.0",
-		"npm": ">=6.14.6",
-		"yarn": ">=1.22.4"
+		"node": "^10.22.0"
 	},
 	"browserslist": [
 		">0.1%",
